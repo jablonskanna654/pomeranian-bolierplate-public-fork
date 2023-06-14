@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-
 import './styles/aside.css';
 
 export function AppAside() {
@@ -15,6 +14,12 @@ export function AppAside() {
           </li>
           <li>
             <NavLink to="exercises">Ćwiczenia</NavLink>
+            <li>
+            <NavLink to="mojeCV">Moje CV</NavLink>
+          </li>
+          </li>
+          <li>
+            <NavLink to="blog">Blog</NavLink>
           </li>
         </ul>
       </nav>
