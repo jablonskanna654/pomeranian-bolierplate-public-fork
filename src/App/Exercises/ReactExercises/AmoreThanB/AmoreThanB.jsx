@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './style.css';
 
-export const MoreOrLess = () => {
+export const AmoreThanB = () => {
+
   const [valA, setValA] = useState(0);
   const [valB, setValB] = useState(0);
 
@@ -11,31 +12,27 @@ export const MoreOrLess = () => {
     if (x > y) {
       console.log('x > y');
       setResult('X jest większe od Y');
-    } else if (x === y) {
-      console.log('x === y');
-      setResult('X jest równe Y');
-    } else {
-      console.log('x < y');
-      setResult('X jest mniejsze od Y');
-    }
-  }
-
+  }  else if (x === y) {
+    console.log('x === y');
+      setResult('X jest równe Y'); }
+    else { 
+    console.log('x < y');
+   setResult('X jest mniejsze od Y');
+ }
+ }
   function aChangeHandler(ev) {
     let a = ev.target.value;
     setValA(a);
     console.log('A = '.concat(a));
     // compareNumbers(10, 20);
-    // compareNumbers(100, 20);
-    // compareNumbers(1, 20);
-
     compareNumbers(a, valB);
+ 
   }
 
   function bChangeHandler(ev) {
     let b = ev.target.value;
     setValB(b);
     console.log('B = '.concat(b));
-
     compareNumbers(valA, b);
   }
 
@@ -46,8 +43,8 @@ export const MoreOrLess = () => {
       <br />
       <input placeholder="B" type="number" onChange={bChangeHandler}></input>
       <h2>
-        {'A: '}
-        {valA}
+      {'A: '}
+      {valA}
       </h2>
       <h2>
         {'B: '}
@@ -56,4 +53,4 @@ export const MoreOrLess = () => {
       <h3>{result}</h3>
     </div>
   );
-};
+}
