@@ -1,0 +1,25 @@
+.font-test-family {
+  font-family: Chilanka;
+}
+div.mydiv-1 {
+  background-color: gold;
+  padding: 20px;
+}
+div.mydiv-2 {
+  font-size: 12px;
+}
+div.mydiv-3 span {
+  color:red;
+}
+div.mydiv-3 > span {
+  color:blue;
+  font-size: 24px;
+}
+div.mydiv-3 + .p {
+  background-color: #170a0a;
+  color: grey;
+}
+div.mydiv-4 ~ .p {
+  color: greenyellow;
+  font-weight: bold;
+};

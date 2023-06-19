@@ -1,0 +1,74 @@
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.dark-theme {
+  color: #eee;
+
+  background: #333;
+}
+
+.light-theme {
+  background: #eee;
+
+  color: #333;
+}
+
+.wrapper {
+  transition: all 2s;
+}
+.animation {
+  animation-name: slide-in;
+  animation-duration: 2s;
+}
+
+@keyframes slide-in {
+  0% {
+    position: absolute;
+    left: -1000px;
+  }
+  100% {
+    position: absolute;
+    left: 0px;
+  }
+  
+}
+.box {
+  padding: 15px; margin: 10px 0px 0px 20px; width: 95px; height: 95px;
+  animation: animacja 5s ease 1s infinite alternate none;
+  }
+  
+  .box:hover { animation-play-state:paused; }
+  
+  @keyframes animacja
+  {
+  0% { margin-left: 0; background: dodgerblue }
+  25% { margin-left: 5%; background: crimson }
+  50% { margin-left: 15%; background: darkorange }
+  75% { margin-left: 30%; background: limegreen }
+  100% { margin-left: 60%; background: darkgreen }
+  }
+.business-card {
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+}
+.business-card * {
+  margin: 0;
+}
+
+.business-card a {
+  text-decoration: none;
+  color:black;
+}
+.business-card section {
+  margin-bottom: .2em;
+}
+
+.business-card section :nth-child(2) {
+  color: #FE3756;
+}
