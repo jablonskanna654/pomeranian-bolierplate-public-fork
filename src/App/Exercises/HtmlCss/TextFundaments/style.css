@@ -1,0 +1,14 @@
+.font-test-family {
+  font-family: Chilanka;
+  font-family: 'Lato', sans-serif;
+}
+.my-style {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: dashed;
+  line-height: normal;
+  line-height: normal;
+}
