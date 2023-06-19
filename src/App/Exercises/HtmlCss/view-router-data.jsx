@@ -6,6 +6,7 @@ import { GoogleFontsMetaData } from './GoogleFonts/router-data';
 import { SelectorsAndCascadeMetaData } from './SelectorsAndCascade/router-data';
 import { BusinessCardMetaData } from './BusinessCard/router-data';
 import { ListMetaData } from './List/router-data';
+import { blockRouterMetaData as blockRouterMetaDataBoxModel } from './Exercise-Box-model/router-data';
 // import { TextFundaments } from './TextFundaments/TextFundaments';
 export const blockRouterMetaData = [
   blockRouterMetaData121220231,
@@ -13,5 +14,6 @@ export const blockRouterMetaData = [
   GoogleFontsMetaData,
   BusinessCardMetaData,
   ListMetaData,
+  blockRouterMetaDataBoxModel,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
