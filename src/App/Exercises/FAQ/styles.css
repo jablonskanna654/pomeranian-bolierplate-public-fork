@@ -1,0 +1,7 @@
+.faq-main-container .question-container {
+  width: 700px;
+  height: 34px;
+  font-family: 'Poppins';
+  display: flex;
+  font-style: normal;
+}

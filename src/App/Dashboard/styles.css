@@ -1,2 +1,112 @@
 .dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 0.9fr;
+  grid-template-rows: auto 1.2fr 1fr;
+  gap: 20px 20px;
+  grid-template-areas:
+    'Header Header Aside'
+    'Links Links Aside'
+    'Links Links Aside';
+  /* width: 70%; */
+}
+.dashboard header {
+  grid-area: Header;
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+}
+.dashboard aside {
+  grid-area: Aside;
+}
+.dashboard .links {
+  grid-area: Links;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.dashboard .dashboard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+  border-radius: 14px;
+}
+
+header {
+  grid-area: header;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 3rem;
+  box-shadow: 0px 1px 9px 0px var(--color-grey);
+}
+header > a:first-of-type {
+  text-decoration: none;
+}
+header.header-title {
+  color: var(--color-grey);
+  font-weight: normal;
+}
+header .logo {
+  height: auto;
+  width: 200px;
+  pointer-events: none;
+}
+header button.settings {
+  width: 50px;
+  height: auto;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border: solid 1px transparent;
+}
+header button.settings:hover {
+  border: dotted 1px lightgray;
+  border-radius: 50%;
+}
+header button.dropdown-menu {
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border: solid 1px transparent;
+}
+header button.dropdown-menu:hover {
+  border: dotted 1px lightgray;
+  border-radius: 50%;
+}
+.profile-picture .placeholder {
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  width: 50px;
+  height: 50px;
+}
+header .menu {
+  display: flex;
+  gap: 20px;
+}
+
+header .user-details {
+  align-self: flex-end;
+}
+
+header .user-details p {
+  margin: 0;
 }
