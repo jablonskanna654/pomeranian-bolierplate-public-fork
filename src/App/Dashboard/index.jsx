@@ -49,16 +49,17 @@ export const Dashboard = () => {
         </p>
       </header>
       <div className="links">
-        {availableCards.map((card) => {
+        {/* {availableCards.map((card, index) => {
           return (
             <DashboardCard
+              key={index}
               sectionTitle={card.sectionTitle}
               description={card.description}
               link={card.link}
               icon={card.icon}
             />
           );
-        })}
+        })} */}
       </div>
       {/* <aside className="about-me">
         <Profile />
