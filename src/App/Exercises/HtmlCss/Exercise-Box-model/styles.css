@@ -1,0 +1,69 @@
+.parent-box-model p {
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid red;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+}
+.display-css-test {
+  background-color: gold;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+/* #unique-id-box-model  {
+
+}
+.class-box-model {
+
+} */
+/* ////////////////Box sizing vs Border Box\\\\\\\\\\\\\\\\ */
+.box-sizing-container {
+  margin: 50px;
+}
+.box-sizing-container .content-box-example {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid yellow;
+  box-sizing: content-box;
+  background-color: red;
+}
+.box-sizing-container .border-box-example {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid pink;
+  box-sizing: border-box;
+}
+/* ////////////////Box sizing vs Border Box\\\\\\\\\\\\\\\\ */
+/* ////////////////CSS property overflow END\\\\\\\\\\\\\\\\ */
+.overflow-container {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  overflow: auto;
+  margin: 2rem;
+}
+.overflow-content {
+  width: 300px;
+  height: 150px;
+  background-color: brown;
+  padding: 10px;
+  margin-bottom: 100px;
+  overflow: auto;
+}
+/* ////////////////CSS property overflow END\\\\\\\\\\\\\\\\ */
+.units-container {
+  width: 600px;
+  height: 80px;
+  border: 1px solid black;
+}
+.units-content {
+  width: 50%;
+  height: 20%;
+  background-color: red;
+}

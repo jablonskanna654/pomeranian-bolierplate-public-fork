@@ -1,0 +1,42 @@
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.dark-theme {
+  color: #eee;
+  background: #333;
+}
+.light-theme {
+  background: #eee;
+  color: #333;
+}
+.wrapper {
+  transition: all 2s;
+}
+.animation {
+  animation-name: slide-in;
+  animation-duration: 2s;
+}
+@keyframes slide-in {
+  0% {
+    position: absolute;
+    left: -1000px;
+  }
+  100% {
+    position: absolute;
+  }
+}
+
+.dog-table .dog-table tr .dog-table td {
+  width: 100%;
+  border: 2px solid lightslategray;
+}
+.dog-table tr:nth-child(2n) {
+  background-color: rgb(140, 204, 239);
+}
+.dog-table tbody tr:hover {
+  background-color: rgb(255, 204, 0);
+  font-weight: bold;
+}
