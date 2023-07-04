@@ -1,16 +1,14 @@
 import React from 'react';
 import './style.css';
 import fox from './fox.jpg';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/700.css';
-const FigmaFloatDesign = () => {
 
+const FigmaFloatDesign = () => {
   return (
-    <>
+    <div className="FigmaDesing">
       <div className="container">&gt; BLOG &gt; ĆWICZENIE</div>
       <p className="firstA">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
         <p className="firstB">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
@@ -24,7 +22,8 @@ const FigmaFloatDesign = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Nibh mauris cursus
         mattis molestiea iaculis at. Dictum varius duis at consectetur lorem
-        donec.</p>
+        donec.
+      </p>
       <img className="fox" src={fox} alt="fox (d) view" />
       <p className="comment-down">zapisz na później</p>
       <p className="pink-frame">
@@ -59,11 +58,11 @@ const FigmaFloatDesign = () => {
         Quis enim lobortis scelerisque fermentum dui faucibus in ornare. Auctor
         elit sed vulputate mi.
       </p>
-      <div className='shape square1'></div>
-      <div className='shape square2'></div>
-      <div className='shape square3'></div>
-    </>
-   );
+      <div className="shape square1"></div>
+      <div className="shape square2"></div>
+      <div className="shape square3"></div>
+    </div>
+  );
 };
 
-export default FigmaFloatDesign
+export default FigmaFloatDesign;

@@ -13,10 +13,11 @@ aside ul {
 }
 
 aside li {
+  list-style: none;
   line-height: 2rem;
 }
 
-.aside-row {
+aside .aside-row {
   display: flex;
   flex-direction: row;
   align-items: center;
