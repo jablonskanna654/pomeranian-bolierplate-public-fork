@@ -4,39 +4,57 @@ import './style.css';
 import MoleGameBoard from './MoleGameBoard';
 import MoleGamesSettings from './MoleGameSettings';
 import CountdownTimer from './MoleTimer';
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
+import ScoreBoard from './ScoreBoard';
 
 export const HitTheMoleGame = () => {
-  const defaultGameTime = 2 * 60 * 1000;
-  const [moleArray, setMoleArray] = useState(
-    Array(10).fill({ isVisible: false, isWacked: false })
-  );
-  const [gameTime, setGameTime] = useState(defaultGameTime); // 2000 * 60
-  const [moleCount, setMoleCount] = useState(1); // 1
-  const [scoreCount, setScoreCount] = useState(0);
+  const DEFAULT_GAME_TIME = 2 * 60 * 1000;
+  const DEFAULT_MOLE_SPEED = 1 * 1000;
+  const DEFAULT_GAME_BOARD = Array(10).fill({
+    isVisible: false,
+    isWacked: false,
+  });
+
+  const [moleArray, setMoleArray] = useState(DEFAULT_GAME_BOARD);
+  const [gameTime, setGameTime] = useState(DEFAULT_GAME_TIME);
+  const [moleCount, setMoleCount] = useState(1);
+  const [scoreCount, setScoreCount] = useState(null);
   const [countdown, setCountdown] = useState(gameTime / 1000);
-  useEffect(() => {
-    setCountdown(seconds);
-    let interval;
-    if (!interval) {
-      interval = setInterval(() => {
-        setCountdown((prevCountdown) => prevCoundown - 1);
-      }, 1000);
-    }
-  }, [seconds]);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
-    let interval;
-    if (!interval) {
-      interval = setInterval(() => {
-        showRandomMole();
+    setGameStarted(false);
+    setCountdown(gameTime / 1000);
+  }, [gameTime]);
+
+  useEffect(() => {
+    if (scoreCount === 20) setGameStarted(false);
+  }, [scoreCount]);
+
+  useEffect(() => {
+    let timerInterval;
+
+    if (!timerInterval && gameStarted) {
+      timerInterval = setInterval(() => {
+        setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
     }
-  }, []);
+
+    if (countdown === 0) clearInterval(timerInterval);
+    return () => clearInterval(timerInterval);
+  }, [countdown, gameStarted]);
+
+  useEffect(() => {
+    let moleInterval;
+    if (!moleInterval && gameStarted) {
+      moleInterval = setInterval(() => {
+        showRandomMole();
+      }, DEFAULT_MOLE_SPEED);
+    }
+  }, [gameStarted]);
 
   function hitTheMole(index) {
     if (moleArray[index].isVisible) {
-      setScore(score + 1);
+      setScoreCount((prevScore) => prevScore + 1);
       setMoleArray((prevVal) => {
         const newArray = [...prevVal];
         newArray[index].isVisible = false;
@@ -44,11 +62,13 @@ export const HitTheMoleGame = () => {
       });
     }
   }
+
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
   function showRandomMole() {
     const random = getRandomIntInclusive(0, moleArray.length - 1);
     setMoleArray((previousMoleArray) =>
@@ -62,22 +82,29 @@ export const HitTheMoleGame = () => {
 
   return (
     <>
-      <MoleGamesSettings
-        gameTime={gameTime}
-        moleCount={moleCount}
-        setGameTime={setGameTime}
-        setMoleCount={setMoleCount}
-        startStopGame={() => setGameStarted((prev) => !prev)}
-        gameStarted={gameStarted}
-      />
-      {gameTime !== seconds * 1000 && seconds !== 0 ? (
+      {!gameStarted && (
+        <MoleGamesSettings
+          gameTime={gameTime}
+          setGameTime={setGameTime}
+          moleCount={moleCount}
+          setMoleCount={setMoleCount}
+          startStopGame={() => {
+            setGameStarted((prev) => !prev);
+            setScoreCount(0);
+          }}
+          gameStarted={gameStarted}
+        />
+      )}
+      {typeof scoreCount === 'number' && <ScoreBoard scoreCount={scoreCount} />}
+      {gameStarted && <CountdownTimer countdown={countdown} />}
+
+      {gameStarted && (
         <MoleGameBoard
           scoreCount={scoreCount}
           moleArray={moleArray}
           hitTheMole={hitTheMole}
         />
-      ) : null}
-      <CountdownTimer countdown={countdown} />
+      )}
     </>
   );
 };

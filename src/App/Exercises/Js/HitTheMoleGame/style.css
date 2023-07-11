@@ -43,8 +43,8 @@
   background: #fe3756;
   border-color: #fe3756;
 }
-.gameButtonsRows button:activebutton {
-  background: aqua;
+.gameButtonsRows button.activeButton {
+  background: rgba(254, 55, 86,.8);
 }
 .moleCount {
   width: 100%;
@@ -72,4 +72,27 @@
   background-color: #ebebeb;
   justify-content: center;
   align-items: center;
+}
+
+.moleGameOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+.moleHole{
+  width: 128px;
+  height:128px;
+  background-color: burlywood;
+  border-radius: 45%;
+  border: dotted 2px brown;
+  display: grid;
+  place-items: center;
+}
+
+.moleHoles {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 5px;
+  width: fit-content;
+  height: auto;
 }

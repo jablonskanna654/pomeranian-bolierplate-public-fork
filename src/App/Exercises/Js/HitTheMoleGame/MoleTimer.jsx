@@ -1,18 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const CountdownTimer = ({ initialCountdownState }) => {
-  const [countdown, setCountdown] = useState(initialCountdownState);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCountdown((prevCountdown) => prevCountdown - 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [countdown]);
-
+const CountdownTimer = ({ countdown }) => {
   return (
     <div>
       <h2>Countdown Timer</h2>
