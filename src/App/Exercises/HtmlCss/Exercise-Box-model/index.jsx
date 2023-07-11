@@ -4,8 +4,7 @@ export function CSSBoxModel() {
   return (
     <>
       <p id="unique-id-box-model" className="class-box-model">
-        {' '}
-        {''}3 Ćwiczenia z HTML & CSS - CSSBoxModel
+        3 Ćwiczenia z HTML & CSS - CSSBoxModel
       </p>
       <div className="parent-box-model">
         <p id="unique-id-box-model-2" className="class-box-model">
@@ -40,7 +39,9 @@ export function CSSBoxModel() {
       </div>
       <div className="units-container">
         <div className="units-content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sit tempore sint iure quae repellendus fugiat sunt cupiditate voluptate perferendis ut, inventore nihil? Laborum cum neque enim nulla est!
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sit
+          tempore sint iure quae repellendus fugiat sunt cupiditate voluptate
+          perferendis ut, inventore nihil? Laborum cum neque enim nulla est!
           Dolorem.
         </div>
       </div>
