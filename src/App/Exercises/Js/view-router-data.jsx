@@ -7,6 +7,7 @@ import { routerMetaData as blockRouterMetaDataExercisesNumberIf } from './Exerci
 import { blockRouterMetaData as blockRouterMetaDataEmptyValuesAndComments } from './EmptyValuesAndComments/router-data';
 import { blockRouterMetaData as blockRouterMetaDataJsArraysBasics } from './JsArraysBasics/router-data';
 import { ReactRouterMetaData as blockRouterMetaDataHitMoleGame } from './HitTheMoleGame/router-data';
+import { ReactRouterMetaData as blockRouterMetaDataMemoGame } from './MemoGame/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
@@ -16,5 +17,6 @@ export const blockRouterMetaData = [
   blockRouterMetaDataEmptyValuesAndComments,
   blockRouterMetaDataJsArraysBasics,
   blockRouterMetaDataHitMoleGame,
+  blockRouterMetaDataMemoGame,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
